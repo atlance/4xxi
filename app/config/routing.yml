@@ -1,0 +1,10 @@
+atlance_yahoo_finance:
+  resource: "@YahooFinanceBundle/Controller/"
+  type:     annotation
+
+atlance_yahoo_finance_api:
+  resource: "@YahooFinanceApiBundle/Controller/"
+  type:     annotation
+
+fos_user:
+  resource: "@FOSUserBundle/Resources/config/routing/all.xml"

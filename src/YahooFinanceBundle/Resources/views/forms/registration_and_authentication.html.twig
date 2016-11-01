@@ -1,0 +1,16 @@
+<div class="mobile-screen-wrapper">
+    <div class="mobile-screen">
+        <div class="header">
+            <h1>Аутентификация</h1>
+        </div>
+        <div class="logo"></div>
+        {% include "@YahooFinance/forms/Authorization/login.html.twig"%}
+        <div class="other-login-options">
+            <div class="option" id="getRegistrationForm"><p class="option-text">Регистрация</p></div>
+        </div>
+        {% include "@YahooFinance/forms/Registration/register.html.twig" with { 'form': registrationForm } %}
+        <div class="other-registration-options">
+            <div class="option" id="getLoginForm"><p class="option-text">Войти</p></div>
+        </div>
+    </div>
+</div>

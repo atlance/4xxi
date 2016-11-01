@@ -1,0 +1,9 @@
+<div class="form-group">
+  <h4 class="entity-form-title">Пояснение к маркировке</h4>
+  <div id="markingList" data-prototype="{% filter escape %}{% include '@YahooFinance/forms/Stock/stock.html.twig' with { 'stock': form.stock.vars.prototype } %}{% endfilter %}">
+    {% for stock in form.stock %}
+      <div class="form-group category-marking-item">{% include '@YahooFinance/forms/Stock/stock.html.twig' with { 'stock': stock } %}</div>
+    {% endfor %}
+  </div>
+  <button id="addMarking" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+</div>

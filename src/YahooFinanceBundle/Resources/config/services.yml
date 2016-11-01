@@ -1,0 +1,24 @@
+parameters:
+  yahoo_finance.portfolio.repository.entity: YahooFinanceBundle\Entity\Portfolio
+  yahoo_finance.stock_quote.repository.entity: YahooFinanceBundle\Entity\StockQuote
+
+services:
+  yahoo_finance.subscribers.orm.stock_quote_subscriber:
+    class: YahooFinanceBundle\Subscribers\ORM\StockQuoteSubscriber
+    arguments:
+      - "@yahoo_finance_api"
+    tags:
+      - { name: doctrine.orm.entity_listener, entity: "%yahoo_finance.stock_quote.repository.entity%", event: preFlush }
+
+  yahoo_finance.subscribers.orm.portfolio_subscriber:
+    class: YahooFinanceBundle\Subscribers\ORM\PortfolioSubscriber
+    arguments:
+      - '@security.token_storage'
+    tags:
+      - { name: doctrine.orm.entity_listener, entity: "%yahoo_finance.portfolio.repository.entity%", event: prePersist }
+
+  yahoo_finance.registration.confirm:
+    class: YahooFinanceBundle\Subscribers\RegistrationConfirmationSubscriber
+    arguments: ["@router"]
+    tags:
+      - { name: kernel.event_subscriber }

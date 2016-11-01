@@ -1,0 +1,12 @@
+{% if error is defined %}
+  <div>{{ error.messageKey }}</div>
+{% endif %}
+
+<form action="{{ path("fos_user_registration_register") }}" method="post" id="registration-form">
+  {{ form_widget(form.username, {'attr': {'placeholder': 'логин'}}) }}
+  {{ form_widget(form.email, {'attr': {'placeholder': 'почта'}}) }}
+  {{ form_widget(form.plainPassword.first, {'attr': {'placeholder': 'пароль'}}) }}
+  {{ form_widget(form.plainPassword.second, {'attr': {'placeholder': 'повторите пароль'}}) }}
+  {{ form_widget(form._token) }}
+  <input type="submit" class="login-btn" value="Регистрация" />
+</form>

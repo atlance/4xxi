@@ -1,0 +1,13 @@
+assetic:
+  assets:
+    css:
+      inputs:
+        - '@YahooFinanceBundle/Resources/public/css/*'
+        - 'https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/css/perfect-scrollbar.css'
+
+    js:
+      inputs:
+        - '//cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.7.2/jquery.serializejson.js'
+        - '//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.js'
+        - '//www.gstatic.com/charts/loader.js'
+        - '@YahooFinanceBundle/Resources/public/js/app/*'

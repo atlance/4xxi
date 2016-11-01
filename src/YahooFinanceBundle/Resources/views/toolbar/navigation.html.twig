@@ -1,0 +1,28 @@
+<nav class="toolbar">
+    <ul class="toolbar-navigation" role="tablist">
+        <li role="presentation" class="toolbar-block active">
+            <a href="#portfolio" class="active control-portfolio control-modal" aria-controls="portfolio" role="tab" data-toggle="tab">
+                <div class="toolbar-icon">
+                    <i class="nav-ico portfolio-icon"></i>
+                </div>
+            </a>
+            <div class="toolbar-info"></div>
+        </li>
+        <li role="presentation" class="toolbar-block">
+          <a href="#search" class="control-search control-modal" aria-controls="search" role="tab" data-toggle="tab">
+            <div class="toolbar-icon">
+                <i class="nav-ico search-icon"></i>
+            </div>
+          </a>
+          <div class="toolbar-info"></div>
+        </li>
+        <li class="toolbar-block">
+            <a href="{{ path('fos_user_security_logout') }}">
+                <div class="toolbar-icon">
+                    <i class="fa fa-2 fa-sign-out" aria-hidden="true"></i>
+                </div>
+            </a>
+            <div class="toolbar-info"></div>
+        </li>
+    </ul>
+</nav>

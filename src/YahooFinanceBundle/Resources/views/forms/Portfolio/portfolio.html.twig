@@ -1,0 +1,18 @@
+<form id="portfolio-form" method="post" action="{{ path('yahoo_finance_portfolio_new') }}">
+  <div id="portfolio-form-input-portfolio-name">
+    {{ form_widget(form.name, {'attr': { 'placeholder': 'Enter Portfolio Name'}}) }}
+    <i class="fa portfolio-name"></i>
+  </div>
+  <div id="input-search">
+    <input class='input-search ui-autocomplete-input' placeholder='Start Typing'>
+    <button id="portfolio-form-stock-add"
+            role="button"
+            class="fa"
+            disabled
+            data-prototype="{{ form_widget(form.stock_quotes.vars.prototype)|e('html_attr') }}">
+    </button>
+  </div>
+  <button id="portfolio-form-stock-persist" class="fa" disabled type="submit"></button>
+  <ul id="portfolio-form-stock-list">{% for stockQuote in form.stock_quotes %}<li>{{ form_widget(stockQuote.symbol) }}</li>{% endfor %}</ul>
+  {{ form_widget(form._token) }}
+</form>

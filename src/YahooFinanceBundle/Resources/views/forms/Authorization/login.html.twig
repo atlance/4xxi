@@ -1,0 +1,16 @@
+{% if error is defined %}
+    <div>{{ error.messageKey }}</div>
+{% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post" id="login-form">
+    <input type="text" id="username" name="_username" required="required" placeholder="логин" />
+    <input type="password" id="password" name="_password" required="required" placeholder="пароль" />
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" checked />
+            <span>запомнить меня</span>
+        </label>
+    </div>
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+    <input type="submit" id="_submit" name="_submit"  class="login-btn" value="Войти"/>
+</form>

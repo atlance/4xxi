@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+  {% if not app.user %}
+    {% include '@YahooFinance/forms/registration_and_authentication.html.twig' %}
+  {% endif %}
+    {% if is_granted('ROLE_USER') %}
+      {% include('@YahooFinance/toolbar/navigation.html.twig') %}
+      <div class="tab-content">
+        <i class="fa fa-times" aria-hidden="true" role="button"></i>
+        <div class="search-widget">
+        {% include('@YahooFinance/search/search-widget.html.twig') %}
+        </div><!--
+          -->{% include('@YahooFinance/portfolio/collections.html.twig') %}
+      </div>
+    {% endif %}
+{% endblock %}
+{% block javascripts %}
+  {% if is_granted('ROLE_USER') %}
+    {% javascripts '@YahooFinanceBundle/Resources/public/js/search.js' %}
+      <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>google.charts.load('current', {'packages':['corechart', 'line']});</script>
+  {% endif %}
+{% endblock %}

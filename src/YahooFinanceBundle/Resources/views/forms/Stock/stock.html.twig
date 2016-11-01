@@ -1,0 +1,9 @@
+<div class="input-group">
+    <span class="input-group-addon input-addon-with-input">
+        {{ form_widget(stock.name, {'attr' : {'class' : 'form-control', 'placeholder' : "параметр"}}) }}
+    </span>
+    {{ form_widget(stock.description, {'attr' : {'class' : 'form-control', 'placeholder' : "описание"}}) }}
+    <span class="input-group-btn">
+        <button class="category-marking-remove btn btn-danger" role="button"><i class="fa fa-remove"></i></button>
+    </span>
+</div>

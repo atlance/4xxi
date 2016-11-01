@@ -1,0 +1,34 @@
+<div id="portfolios"
+     data-prototype="{{ '<li class="company-name stock-quote-__sid__ col-md-12" data-symbol="__symbol__" data-exchange-code="__code__"><p><span>__companyName__</span><span class="chart"></span><i class="remove-stock-quote" role="button" data-sid="__sid__" data-pid="__pid__"></i><i class="get-chart-stock-quote" role="button" data-symbol="__symbol__" data-tooltip="chart"></i></p></li>' | e }}"
+     class="portfolios-wrapper">
+  {% for portfolio in app.user.portfolios | reverse %}
+  <div class="row portfolio-{{ portfolio.id }}">
+    <i class="remove-portfolio" role="button" data-pid="{{ portfolio.id }}"></i>
+    <i class="get-chart-portfolio" role="button" data-pid="{{ portfolio.id }}" data-tooltip="chart" data-symbols="{{ portfolio.getStockSymbols | json_encode }}"></i>
+    <h2>{{ portfolio.name }}</h2>
+    <ul class="quotes-wrapper">
+
+    {% for stockQuote in portfolio.getStockQuotes %}
+      <li class="company-name stock-quote-{{ stockQuote.id }} col-md-12"
+          data-symbol="{{ stockQuote.symbol }}"
+          data-exchange-code="{{ stockQuote.stockExchange.code }}">
+        <p>
+          <span>{{ stockQuote.company.name }}</span>
+          <span class='chart'></span>
+        </p>
+        <i class="remove-stock-quote"
+           role="button"
+           data-sid="{{ stockQuote.id }}"
+           data-pid="{{ portfolio.id }}"
+           data-tooltip="delete"></i>
+        <i class="get-chart-stock-quote"
+           role="button"
+           data-symbol="{{ stockQuote.symbol }}"
+           data-tooltip="chart"></i>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div><!--
+--><div class="portfolio-chart"></div>

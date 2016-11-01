@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {% stylesheets '@css' %} {# filter='uglifycss' filter='cssrewrite'#}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    {% block body %}{% endblock %}
+
+    <div class='modal-control'></div>
+    <i class="fa fa-times" aria-hidden="true" role="button"></i>
+
+    {% javascripts '@js'%} {#filter='uglifyjs' #}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>

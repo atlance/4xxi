@@ -1,0 +1,26 @@
+<div class="user-toolbar">
+    <div class="user-toolbar-logo male"></div>
+    <ul class="user-toolbar-user-info">
+        <li>
+            <i class="fa fa-user" aria-hidden="true"></i><!--
+                    --><span>{{ user.username }}</span>
+        </li>
+        <li>
+            <i class="fa fa-envelope-o" aria-hidden="true"></i><!--
+                    --><span>{{ user.email }}</span>
+        </li>
+        {% for role in user.roles %}
+            <li>
+                <i class="fa fa-universal-access" aria-hidden="true"></i><!--
+                    --><span>{{ role }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="user-actions">
+        <ul>
+            <li>
+                <i class="fa fa-2 fa-cogs" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </div>
+</div>

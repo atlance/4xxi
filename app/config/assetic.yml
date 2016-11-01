@@ -1,0 +1,13 @@
+assetic:
+  assets:
+    css:
+      inputs:
+        - '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css'
+        - '//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css'
+        - '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'
+        - '//fonts.googleapis.com/css?family=Lato:300,700'
+    js:
+      inputs:
+        - '//code.jquery.com/jquery-latest.min.js'
+        - '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'
+        - '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js'
